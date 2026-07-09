@@ -1,0 +1,181 @@
+cabal-version:      3.8
+name:               haskell-production-lab
+version:            0.1.0.0
+synopsis:           Production-style Haskell learning and application lab
+category:           Web, CLI, Education, Systems
+license:            MIT
+license-file:       LICENSE
+author:             OpenAI generated starter kit
+maintainer:         you@example.com
+build-type:         Simple
+tested-with:        GHC ==8.10.7 || ==9.8.4 || ==9.10.2 || ==9.12.2
+
+common shared
+  default-language: Haskell2010
+  default-extensions:
+      BlockArguments
+      DataKinds
+      DeriveAnyClass
+      DeriveGeneric
+      DerivingStrategies
+      DuplicateRecordFields
+      FlexibleContexts
+      FlexibleInstances
+      GeneralizedNewtypeDeriving
+      LambdaCase
+      MultiParamTypeClasses
+      NamedFieldPuns
+      OverloadedStrings
+      RecordWildCards
+      ScopedTypeVariables
+      TypeApplications
+      TypeOperators
+  ghc-options:
+      -Wall
+      -Wcompat
+      -Wincomplete-record-updates
+      -Wincomplete-uni-patterns
+      -Wmissing-deriving-strategies
+      -Wpartial-fields
+      -threaded
+  build-depends:
+      base >=4.14 && <5
+    , aeson >=2.1
+    , async
+    , bytestring
+    , containers
+    , directory
+    , filepath
+    , http-media
+    , http-types
+    , lucid
+    , megaparsec
+    , optparse-applicative
+    , random
+    , scotty
+    , scientific
+    , servant
+    , servant-server
+    , stm
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , wai
+    , wai-websockets
+    , warp
+    , websockets
+
+library
+  import: shared
+  hs-source-dirs: src
+  exposed-modules:
+      HPS.Api
+      HPS.AppState
+      HPS.Domain
+      HPS.Handlers
+      HPS.Html
+      HPS.Lab
+      HPS.Lab.Html
+      HPS.Learning
+      HPS.Ledger
+      HPS.RuntimeMonitor
+      HPS.Search
+      HPS.Service.Clock
+      HPS.Service.EventStore
+      HPS.Service.KV
+      HPS.Service.Logger
+      HPS.Service.Logger.Console
+      HPS.Service.Logger.Memory
+      HPS.Service.Metrics
+      HPS.Service.Queue
+      HPS.StaticSite
+      HPS.Stream
+      HPS.Util
+      HPS.Validation
+      HPS.WebSocket
+
+executable hps-api
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/api
+  build-depends: haskell-production-lab
+
+executable hps-url-shortener
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/url-shortener
+  build-depends: haskell-production-lab
+
+executable hps-scotty-shortener
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/scotty-shortener
+  build-depends: haskell-production-lab
+
+executable hps-ledger
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/ledger
+  build-depends: haskell-production-lab
+
+executable hps-worker
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/worker
+  build-depends: haskell-production-lab
+
+executable hps-event-sourcing
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/event-sourcing
+  build-depends: haskell-production-lab
+
+executable hps-stream
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/stream
+  build-depends: haskell-production-lab
+
+executable hps-search
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/search
+  build-depends: haskell-production-lab
+
+executable hps-static-site
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/static-site
+  build-depends: haskell-production-lab
+
+executable hps-mmlh
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/mmlh
+  build-depends: haskell-production-lab
+
+executable hps-monitor
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/monitor
+  build-depends: haskell-production-lab
+
+executable hps-websocket
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/websocket
+  build-depends: haskell-production-lab
+
+executable hps-tui-kanban
+  import: shared
+  main-is: Main.hs
+  hs-source-dirs: app/tui-kanban
+  build-depends: haskell-production-lab
+
+test-suite hps-test
+  import: shared
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs: test
+  build-depends: haskell-production-lab

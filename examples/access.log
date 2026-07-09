@@ -1,0 +1,6 @@
+GET /health 200 3
+GET /articles 200 10
+POST /articles 201 18
+GET /missing 404 4
+BROKEN
+POST /jobs 202 9

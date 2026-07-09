@@ -1,0 +1,13 @@
+dist-newstyle/
+.stack-work/
+.ghc.environment.*
+.env
+public/
+*.db
+*.sqlite
+*.log
+!examples/access.log
+.DS_Store
+node_modules/
+cloudflare/humblr-workers/dist/
+cloudflare/humblr-workers/.wrangler/

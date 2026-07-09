@@ -1,0 +1,13 @@
+{
+  "name": "humblr-workers-blueprint",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --config wrangler.router.jsonc",
+    "deploy": "wrangler deploy --config wrangler.router.jsonc",
+    "d1:migrate": "wrangler d1 migrations apply humblr-db --local"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  }
+}

@@ -1,0 +1,74 @@
+### health
+GET http://localhost:8080/health
+
+### lab dashboard
+GET http://localhost:8080/lab
+
+### lab stats
+GET http://localhost:8080/lab/stats
+
+### create lab project
+POST http://localhost:8080/lab/projects
+Content-Type: application/json
+
+{
+  "projectNameSeed": "Typed calculator",
+  "projectSummarySeed": "Pure calculation core with CLI and future GUI wrapper.",
+  "projectRepoSeed": null,
+  "projectDemoSeed": null,
+  "projectTagsSeed": ["calculator", "types", "learning"]
+}
+
+### log learning
+POST http://localhost:8080/lab/learning
+Content-Type: application/json
+
+{
+  "learningTopicSeed": "Algebraic data types",
+  "learningNotesSeed": "Use ADTs for stage and outcome states instead of free-form strings.",
+  "learningLinksSeed": [],
+  "learningOutcomeSeed": "practiced"
+}
+
+### prepare release
+POST http://localhost:8080/lab/releases
+Content-Type: application/json
+
+{
+  "releaseProjectIdSeed": "haskell-production-lab",
+  "releaseVersionSeed": "v0.1.0",
+  "releaseNotesSeed": "Initial public release.",
+  "releaseArtifactSeed": null
+}
+
+### create article
+POST http://localhost:8080/articles
+Content-Type: application/json
+
+{
+  "seedTitle": "Typed APIs in Haskell",
+  "seedSlug": "typed-apis",
+  "seedBody": "Servant lets us describe API shapes as Haskell types.",
+  "seedTags": ["servant", "api", "types"]
+}
+
+### create url
+POST http://localhost:8080/urls
+Content-Type: application/json
+
+{
+  "requestUrl": "https://www.haskell.org",
+  "requestCustomSlug": "haskell"
+}
+
+### create ledger transaction
+POST http://localhost:8080/ledger
+Content-Type: application/json
+
+{
+  "ledgerDescriptionSeed": "seed capital",
+  "ledgerPostingsSeed": [
+    {"postingAccount": "cash", "postingAmount": 1000},
+    {"postingAccount": "equity", "postingAmount": -1000}
+  ]
+}

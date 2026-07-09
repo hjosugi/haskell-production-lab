@@ -1,0 +1,8 @@
+packages: .
+
+jobs: $ncpus
+optimization: 2
+write-ghc-environment-files: never
+
+tests: True
+documentation: False

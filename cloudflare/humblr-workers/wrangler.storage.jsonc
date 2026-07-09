@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "humblr-storage",
+  "main": "workers/storage.mjs",
+  "compatibility_date": "2026-07-08",
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "humblr-assets"
+    }
+  ]
+}

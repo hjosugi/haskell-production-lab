@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "humblr-router",
+  "main": "workers/router.mjs",
+  "compatibility_date": "2026-07-08",
+  "assets": {
+    "directory": "./assets"
+  },
+  "services": [
+    { "binding": "DATABASE", "service": "humblr-database" },
+    { "binding": "STORAGE", "service": "humblr-storage" },
+    { "binding": "IMAGES", "service": "humblr-images" },
+    { "binding": "SSR", "service": "humblr-ssr" }
+  ],
+  "vars": {
+    "APP_ENV": "development"
+  }
+}
