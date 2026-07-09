@@ -30,3 +30,14 @@
 - [ ] Service Binding integration tests
 - [ ] D1 migrations in CI
 - [ ] R2 upload smoke tests
+
+## PDF-informed learning and hardening
+
+The local PDF sources summarized in `docs/PDF_SOURCE_SYNTHESIS.md` suggest
+focused follow-up work that supports the existing production-lab roadmap.
+
+- [ ] Add property tests for ledger invariants, parser round trips, and service handle laws
+- [ ] Expand `hps-mmlh` exercises for type errors, parser combinators, and IO boundary refactoring
+- [ ] Add serialization/deserialization examples with structured validation errors
+- [ ] Document STM queue and WebSocket concurrency choices before replacing them with production adapters
+- [ ] Revisit API/domain type design during Servant OpenAPI work

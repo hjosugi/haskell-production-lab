@@ -26,3 +26,15 @@
 - GREE internal Haskell tutorial: https://labs.gree.jp/blog/2013/12/9201/
 - awesome-haskell: https://github.com/uhub/awesome-haskell
 - Serokell Haskell development page: https://serokell.io/haskell-developers
+
+## Local PDF reference materials
+
+These PDFs were reviewed locally as summarized learning and research sources.
+They are not included in source control and should not be committed.
+
+- `haskell book`: Haskell Programming, Chris Allen and Julie Moronuki.
+- `Haskell.pdf`: Effective Haskell, Rebecca Skinner.
+- `FP pragpub0.pdf`: Functional Programming: A PragPub Anthology, Michael Swaine and the PragPub writers.
+
+See `docs/PDF_SOURCE_SYNTHESIS.md` for high-level topic synthesis and mapping
+to the repository apps and examples.
