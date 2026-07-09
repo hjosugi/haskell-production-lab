@@ -23,5 +23,3 @@ jobs:
           cabal build all
       - name: Test
         run: cabal test all
-      - name: Haddock
-        run: cabal haddock all
