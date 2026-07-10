@@ -58,6 +58,7 @@ src/                       Shared Haskell library
 src/HPS/Lab*.hs            Project, learning, release dashboard
 app/                       Executable applications
 cloudflare/humblr-workers/ Haskell/WASM Cloudflare Workers blog blueprint
+migrations/postgresql/     Versioned PostgreSQL schema migrations
 docs/                      Architecture, runbooks, production notes, references
 issues/                    Markdown issue backlog and future features
 examples/                  Sample inputs and request files

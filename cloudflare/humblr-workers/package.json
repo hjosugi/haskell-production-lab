@@ -3,11 +3,26 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev --config wrangler.router.jsonc",
-    "deploy": "wrangler deploy --config wrangler.router.jsonc",
-    "d1:migrate": "wrangler d1 migrations apply humblr-db --local"
+    "check": "npm run types:check && npm run typecheck && npm test && npm run deploy:dry-run",
+    "d1:migrate": "wrangler d1 migrations apply DB --local --persist-to .wrangler/state --config wrangler.database.jsonc",
+    "d1:migrate:remote": "wrangler d1 migrations apply DB --remote --config wrangler.database.jsonc",
+    "deploy": "npm run deploy:database && npm run d1:migrate:remote && npm run deploy:router",
+    "deploy:database": "wrangler deploy --config wrangler.database.jsonc",
+    "deploy:dry-run": "wrangler deploy --dry-run --config wrangler.database.jsonc && wrangler deploy --dry-run --config wrangler.router.jsonc",
+    "deploy:router": "wrangler deploy --config wrangler.router.jsonc",
+    "dev": "wrangler dev --config wrangler.router.jsonc --config wrangler.database.jsonc",
+    "dev:database": "wrangler dev --config wrangler.database.jsonc",
+    "dev:router": "wrangler dev --config wrangler.router.jsonc",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "types": "wrangler types types/database-env.d.ts --config wrangler.database.jsonc --env-interface DatabaseEnv --include-runtime false && wrangler types types/router-env.d.ts --config wrangler.router.jsonc --env-interface RouterEnv --include-runtime false && wrangler types types/storage-env.d.ts --config wrangler.storage.jsonc --env-interface StorageEnv --include-runtime false",
+    "types:check": "wrangler types types/database-env.d.ts --config wrangler.database.jsonc --env-interface DatabaseEnv --include-runtime false --check && wrangler types types/router-env.d.ts --config wrangler.router.jsonc --env-interface RouterEnv --include-runtime false --check && wrangler types types/storage-env.d.ts --config wrangler.storage.jsonc --env-interface StorageEnv --include-runtime false --check"
   },
   "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.18.4",
+    "@cloudflare/workers-types": "^5.20260710.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10",
     "wrangler": "^4.110.0"
   }
 }

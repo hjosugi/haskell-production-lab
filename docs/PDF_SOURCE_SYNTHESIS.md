@@ -21,7 +21,7 @@ section structure. They intentionally avoid long verbatim excerpts.
 | Lab area | PDF topics to carry forward | Repo mapping |
 |---|---|---|
 | Servant API | Type-level API thinking, module boundaries, JSON contracts, explicit errors, application structure. | `HPS.Api`, `HPS.Handlers`, `HPS.Domain`, `hps-api`, `/lab`, future Servant OpenAPI work. |
-| Service pattern | Reader-style environment passing, effect stacks, type classes as interfaces, separating behavior from concrete infrastructure. | `HPS.Service.*`, `docs/SERVICE_PATTERN.md`, `blueprints/postgres-adapter`, future Postgres/D1/R2 adapters. |
+| Service pattern | Reader-style environment passing, effect stacks, type classes as interfaces, separating behavior from concrete infrastructure. | `HPS.Service.*`, `HPS.Service.KV.Postgres`, the D1 Database Worker, `docs/SERVICE_PATTERN.md`, and future R2 adapters. |
 | IO and pure core | Project/module structure, IO sequencing, procedural shell with functional core, local system programs, error handling. | `HPS.Ledger`, `HPS.StaticSite`, `HPS.Search`, `HPS.RuntimeMonitor`, `app/*` executable shells over shared library code. |
 | Type classes and algebra | Eq/Ord/Show/Read, deriving, Semigroup/Monoid, Functor, Applicative, Monad, Foldable, Traversable, laws, higher-kinded types. | Domain instances, validation combinators, search scoring, renderers, service handles, future law-oriented tests. |
 | Parsing and serialization | Parser combinators, monadic parsers, deserialization, heterogeneous data, Aeson-style contracts, file/archive examples. | `HPS.Ledger` journal parsing, `HPS.Search`, `HPS.Stream`, API JSON payloads, `examples/ledger.journal`, `examples/requests.http`. |

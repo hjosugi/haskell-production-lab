@@ -6,3 +6,6 @@ write-ghc-environment-files: never
 
 tests: True
 documentation: False
+
+package postgresql-libpq
+  flags: +use-pkg-config

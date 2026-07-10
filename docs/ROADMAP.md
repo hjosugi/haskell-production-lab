@@ -11,8 +11,9 @@
 
 ## Phase 2: real storage adapters
 
-- [ ] PostgreSQL adapter for KV and ledger
-- [ ] SQLite/D1 adapter for blog articles
+- [x] PostgreSQL adapter for KV
+- [ ] PostgreSQL repository for ledger
+- [x] SQLite/D1 adapter for blog articles, comments, and sessions
 - [ ] R2/S3 adapter for object storage
 - [ ] Redis/Cloudflare Queue adapter
 
@@ -28,7 +29,7 @@
 - [ ] GHC wasm build pipeline
 - [ ] Worker bundle-size optimization
 - [ ] Service Binding integration tests
-- [ ] D1 migrations in CI
+- [x] D1 migrations in CI
 - [ ] R2 upload smoke tests
 
 ## PDF-informed learning and hardening

@@ -3,6 +3,8 @@
 ## What is implemented
 
 - Cabal monorepo with shared library and 13 executable targets
+- PostgreSQL JSONB adapter for `HPS.Service.KV`, with a versioned migration
+- Cloudflare D1 adapter for Humblr articles, comments, and hashed sessions
 - Servant REST API gateway
 - `/lab` Haskell Production Lab dashboard for projects, learning logs, and release preparation
 - Lucid-rendered HTML UI and typed JSON API
@@ -28,6 +30,10 @@
 cabal update
 cabal build all
 cabal test hps-test
+
+cd cloudflare/humblr-workers
+npm run d1:migrate
+npm run check
 ```
 
 The local GHC is `8.10.7` and cabal-install is `3.16.1.0`.

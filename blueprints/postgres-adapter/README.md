@@ -1,20 +1,23 @@
-# Postgres adapter blueprint
+# PostgreSQL adapter status
 
-Future implementation target for `HPS.Service.KV` and ledger storage.
+The generic `HPS.Service.KV` adapter is implemented in
+`HPS.Service.KV.Postgres`. See `docs/POSTGRESQL_KV.md` for pool construction,
+migration steps, tests, and failure behavior. The ledger repository remains a
+future implementation target.
 
 ## Shape
 
 ```haskell
-newPostgresKVHandle :: Pool Connection -> Handle Text Value
+newPostgresHandle :: (FromJSON v, ToJSON v) => Pool Connection -> Handle Text v
 newLedgerRepository :: Pool Connection -> LedgerRepository
 ```
 
 ## Migration sketch
 
 ```sql
-create table kv_store (
-  key text primary key,
-  value jsonb not null,
+create table hps_kv (
+  kv_key text primary key,
+  kv_value jsonb not null,
   updated_at timestamptz not null default now()
 );
 

@@ -8,22 +8,26 @@ Use this file as a GitHub issue seed list. Copy each item into a separate issue 
 
 Labels: `enhancement`, `database`, `production`
 
+Tracking: [GitHub #1](https://github.com/hjosugi/haskell-production-lab/issues/1)
+
 Acceptance criteria:
 
-- [ ] `newPostgresHandle :: Pool Connection -> Handle Text v`
-- [ ] migration file included
-- [ ] JSONB encode/decode covered by tests
-- [ ] failure cases documented
+- [x] `newPostgresHandle :: Pool Connection -> Handle Text v`
+- [x] migration file included
+- [x] JSONB encode/decode covered by tests
+- [x] failure cases documented
 
 ### [feature] Add D1 adapter for Cloudflare blueprint
 
 Labels: `enhancement`, `cloudflare`, `database`
 
+Tracking: [GitHub #2](https://github.com/hjosugi/haskell-production-lab/issues/2)
+
 Acceptance criteria:
 
-- [ ] D1 migrations for articles, comments, sessions
-- [ ] local `wrangler d1` workflow documented
-- [ ] Router Worker calls Database Worker through Service Bindings
+- [x] D1 migrations for articles, comments, sessions
+- [x] local `wrangler d1` workflow documented
+- [x] Router Worker calls Database Worker through Service Bindings
 
 ## Epic: API production hardening
 

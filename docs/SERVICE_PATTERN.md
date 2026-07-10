@@ -19,8 +19,11 @@ Then the app can use:
 
 - `newMemoryHandle` for tests
 - `newJsonFileHandle` for local demos
-- future `newPostgresHandle` for production
-- future `newD1Handle` for Cloudflare Workers
+- `newPostgresHandle` for PostgreSQL production storage
+- a D1-backed Database Worker behind a Service Binding at the Cloudflare edge
+
+The PostgreSQL adapter, migration workflow, and failure semantics are documented
+in [POSTGRESQL_KV.md](POSTGRESQL_KV.md).
 
 ## Why this is useful in interviews
 

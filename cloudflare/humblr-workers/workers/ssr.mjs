@@ -1,4 +1,5 @@
-export default {
+/** @type {ExportedHandler} */
+const worker = {
   async fetch(request) {
     const url = new URL(request.url);
     const html = `<!doctype html>
@@ -7,3 +8,5 @@ export default {
     return new Response(html, { headers: { "content-type": "text/html;charset=utf-8" } });
   }
 };
+
+export default worker;

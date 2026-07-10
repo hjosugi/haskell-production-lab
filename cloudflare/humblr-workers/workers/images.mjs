@@ -1,4 +1,5 @@
-export default {
+/** @type {ExportedHandler} */
+const worker = {
   async fetch(request) {
     const url = new URL(request.url);
     const src = url.searchParams.get("src");
@@ -16,3 +17,5 @@ export default {
     });
   }
 };
+
+export default worker;

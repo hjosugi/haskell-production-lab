@@ -46,14 +46,14 @@ This allows:
 
 - in-memory tests
 - file-backed local demos
-- future Postgres / Redis / D1 / R2 adapters
+- PostgreSQL KV storage and a D1-backed Humblr Database Worker, plus future Redis / R2 adapters
 - thinner Servant, Scotty, Yesod, and Workers layers
 
 ## Production upgrade path
 
 | Area | Current implementation | Production replacement |
 |---|---|---|
-| Store | STM / JSON file | PostgreSQL, Cloudflare D1, DynamoDB |
+| Store | STM / JSON file; PostgreSQL KV adapter | Cloudflare D1, DynamoDB, domain-specific PostgreSQL repositories |
 | Queue | STM TQueue | Cloudflare Queues, SQS, Redis Streams |
 | Object storage | Blueprint | Cloudflare R2, S3 |
 | Observability | in-memory metrics | Prometheus/OpenTelemetry |

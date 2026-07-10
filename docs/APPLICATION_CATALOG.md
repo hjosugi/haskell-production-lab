@@ -22,9 +22,9 @@
 
 | Blueprint | Purpose |
 |---|---|
-| `cloudflare/humblr-workers` | Cloudflare Workers + Haskell WASM blog architecture, split into Router / Database / Storage / Images / SSR |
+| `cloudflare/humblr-workers` | D1-backed Workers blog architecture, split into Router / Database / Storage / Images / SSR with Service Bindings |
 | `blueprints/yesod-blog-workshop` | Yesod/GREE-style blog workshop skeleton |
-| `blueprints/postgres-adapter` | Service handle boundary for future persistent/Postgres adapter |
+| `blueprints/postgres-adapter` | Implemented PostgreSQL KV adapter and future ledger repository direction |
 
 ## Real-world inspiration map
 

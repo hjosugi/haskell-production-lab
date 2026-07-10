@@ -28,9 +28,20 @@ Haskell-to-WASM through the GHC wasm backend is real, but Cloudflare Worker inte
 
 - Haskell shared API/domain modules
 - Worker JS shims
-- Wrangler config
-- D1 schema
+- generated binding types from Wrangler config
+- versioned D1 migrations for articles, comments, and hashed sessions
+- Router-to-Database Service Binding routing
+- workerd/Vitest integration tests and deploy dry-runs
 - explicit issue backlog for production hardening
+
+## D1 workflow
+
+The executable workflow is documented in
+`cloudflare/humblr-workers/README.md`. In short, `npm run d1:migrate` applies
+only to Wrangler's local state, `npm test` runs migrations and Database Worker
+requests inside workerd, and `npm run deploy` deploys Database Worker before
+the Router Worker. Remote migrations require the explicit
+`d1:migrate:remote` command.
 
 ## Local alternative
 
