@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](RUNBOOK.md) | [日本語](RUNBOOK.ja.md)
+
 # Runbook
 
 ## Start local API

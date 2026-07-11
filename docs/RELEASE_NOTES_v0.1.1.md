@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](RELEASE_NOTES_v0.1.1.md) | [日本語](RELEASE_NOTES_v0.1.1.ja.md)
+
 # v0.1.1
 
 PDF-informed documentation release for Haskell Production Lab.

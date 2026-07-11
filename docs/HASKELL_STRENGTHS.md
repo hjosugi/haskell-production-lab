@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](HASKELL_STRENGTHS.md) | [日本語](HASKELL_STRENGTHS.ja.md)
+
 # Haskell strengths demonstrated here
 
 ## Strong static types
