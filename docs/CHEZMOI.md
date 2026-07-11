@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](CHEZMOI.md) | [日本語](CHEZMOI.ja.md)
+
 # chezmoi Integration
 
 This project is intentionally not stored inside chezmoi as a copied directory. The source of truth is the public GitHub repository.

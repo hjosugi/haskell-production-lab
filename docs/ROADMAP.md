@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](ROADMAP.md) | [日本語](ROADMAP.ja.md)
+
 # Roadmap
 
 ## Phase 1: local production-style suite
