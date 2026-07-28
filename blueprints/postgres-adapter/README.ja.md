@@ -1,21 +1,18 @@
 <!-- i18n: language-switcher -->
 [English](README.md) | [日本語](README.ja.md)
 
-# PostgreSQL adapter status
+# PostgreSQLアダプタの状態
 
-The generic `HPS.Service.KV` adapter is implemented in
-`HPS.Service.KV.Postgres`. See `docs/POSTGRESQL_KV.md` for pool construction,
-migration steps, tests, and failure behavior. The ledger repository remains a
-future implementation target.
+汎用の `HPS.Service.KV` アダプタは `HPS.Service.KV.Postgres` に実装されています。プールの構築、マイグレーション手順、テスト、障害時の挙動については `docs/POSTGRESQL_KV.md` を参照してください。台帳リポジトリは今後の実装対象です。
 
-## Shape
+## 形状
 
 ```haskell
 newPostgresHandle :: (FromJSON v, ToJSON v) => Pool Connection -> Handle Text v
 newLedgerRepository :: Pool Connection -> LedgerRepository
 ```
 
-## Migration sketch
+## マイグレーションの概要
 
 ```sql
 create table hps_kv (

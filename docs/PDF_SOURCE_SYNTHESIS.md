@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](PDF_SOURCE_SYNTHESIS.md) | [日本語](PDF_SOURCE_SYNTHESIS.ja.md)
+
 # PDF source synthesis
 
 This document summarizes three local PDF reference materials used as learning

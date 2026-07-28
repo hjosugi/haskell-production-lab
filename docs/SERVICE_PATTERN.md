@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](SERVICE_PATTERN.md) | [日本語](SERVICE_PATTERN.ja.md)
+
 # Service / Handle Pattern
 
 ## Rule

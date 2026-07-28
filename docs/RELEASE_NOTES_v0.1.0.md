@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](RELEASE_NOTES_v0.1.0.md) | [日本語](RELEASE_NOTES_v0.1.0.ja.md)
+
 # v0.1.0
 
 Initial public release of Haskell Production Lab.

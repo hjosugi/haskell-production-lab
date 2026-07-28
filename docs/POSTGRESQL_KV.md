@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](POSTGRESQL_KV.md) | [日本語](POSTGRESQL_KV.ja.md)
+
 # PostgreSQL KV adapter
 
 `HPS.Service.KV.Postgres` provides a PostgreSQL implementation of the existing

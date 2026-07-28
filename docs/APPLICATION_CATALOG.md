@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](APPLICATION_CATALOG.md) | [日本語](APPLICATION_CATALOG.ja.md)
+
 # Application catalog
 
 ## Included executable apps

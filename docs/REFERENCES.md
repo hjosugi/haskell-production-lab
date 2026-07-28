@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](REFERENCES.md) | [日本語](REFERENCES.ja.md)
+
 # References checked while designing this suite
 
 ## Official / primary docs

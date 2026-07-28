@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](PRODUCTION_CHECKLIST.md) | [日本語](PRODUCTION_CHECKLIST.ja.md)
+
 # Production checklist
 
 ## Build and release

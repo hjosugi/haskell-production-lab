@@ -1,23 +1,26 @@
+<!-- i18n: language-switcher -->
+[English](ARCHITECTURE.md) | [日本語](ARCHITECTURE.ja.md)
+
 # Architecture
 
-## 目的
+## Purpose
 
-この repository は「Haskell で作れる実サービス」を横断的に練習し、その制作物・学習ログ・release 準備を online で管理するための production-style monorepo です。
+This repository is a production-style monorepo for practising, across the board, the kind of real services you can build in Haskell, and for managing the resulting artifacts, learning logs, and release preparation online.
 
-重点は次の3つです。
+There are three points of emphasis.
 
-1. pure domain logic と IO を分離する
-2. Service/Handle pattern で logger / store / queue / metrics / event store を差し替え可能にする
-3. Web API、HTML dashboard、CLI、worker、edge/WASM、学習ツールまで同じ設計思想で作る
+1. Separate pure domain logic from IO
+2. Make logger / store / queue / metrics / event store swappable through the Service/Handle pattern
+3. Build web APIs, HTML dashboards, CLIs, workers, edge/WASM, and learning tools on one design philosophy
 
 ## Haskell Production Lab
 
-`/lab` は Servant API から Lucid で配信される管理 UI です。
+`/lab` is the admin UI, served with Lucid from a Servant API.
 
-- `ProjectStage` で idea / building / shipped / maintained / archived を型として表す
-- `LearningOutcome` で planned / practiced / understood / blocked を型として表す
-- `LabRelease` で GitHub release 前の notes と artifact URL を管理する
-- STM store は local-first な実装で、将来 Postgres / D1 に置き換えられる
+- `ProjectStage` expresses idea / building / shipped / maintained / archived as a type
+- `LearningOutcome` expresses planned / practiced / understood / blocked as a type
+- `LabRelease` holds the notes and artifact URL that precede a GitHub release
+- The STM store is a local-first implementation, replaceable later by Postgres / D1
 
 ## High-level design
 

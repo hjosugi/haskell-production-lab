@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](README.md) | [日本語](README.ja.md)
+
 # Yesod Blog Workshop Blueprint
 
 This blueprint mirrors the GREE-style internal tutorial idea: start with templates, add forms, then add Persistent, Aeson, and auth.

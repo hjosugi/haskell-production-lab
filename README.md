@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](README.md) | [日本語](README.ja.md)
+
 # Haskell Production Lab
 
 Haskell Production Lab is a public, production-style monorepo for going deep on Haskell by building real applications and tracking the work online.

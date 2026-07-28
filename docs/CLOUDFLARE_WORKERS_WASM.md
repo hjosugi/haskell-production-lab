@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](CLOUDFLARE_WORKERS_WASM.md) | [日本語](CLOUDFLARE_WORKERS_WASM.ja.md)
+
 # Cloudflare Workers + Haskell WASM blueprint
 
 The `cloudflare/humblr-workers` folder is inspired by the Haskell-on-Cloudflare blog engine architecture in the provided article.
