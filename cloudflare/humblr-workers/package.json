@@ -19,10 +19,10 @@
     "types:check": "wrangler types types/database-env.d.ts --config wrangler.database.jsonc --env-interface DatabaseEnv --include-runtime false --check && wrangler types types/router-env.d.ts --config wrangler.router.jsonc --env-interface RouterEnv --include-runtime false --check && wrangler types types/storage-env.d.ts --config wrangler.storage.jsonc --env-interface StorageEnv --include-runtime false --check"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.18.4",
+    "@cloudflare/vitest-pool-workers": "^0.18.8",
     "@cloudflare/workers-types": "^5.20260710.1",
     "typescript": "^7.0.2",
     "vitest": "^4.1.10",
-    "wrangler": "^4.110.0"
+    "wrangler": "^4.114.0"
   }
 }
