@@ -11,3 +11,9 @@ public/
 node_modules/
 cloudflare/humblr-workers/dist/
 cloudflare/humblr-workers/.wrangler/
+.claude/skills/graphify/
+.claude/settings.local.json
+.copilot/skills/graphify/
+.codex/skills/graphify/
+.codex/hooks.json
+graphify-out/
