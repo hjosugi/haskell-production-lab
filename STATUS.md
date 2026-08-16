@@ -27,16 +27,18 @@
 ## Verification done
 
 ```bash
-cabal update
-cabal build all
-cabal test hps-test
+nix develop -c cabal update
+nix develop -c cabal build all
+nix develop -c cabal test all
 
 cd cloudflare/humblr-workers
 npm run d1:migrate
 npm run check
 ```
 
-The local GHC is `8.10.7` and cabal-install is `3.16.1.0`.
+The toolchain comes from `flake.nix` and is pinned by `flake.lock`: GHC 9.8.4,
+the same version CI installs. Earlier entries in this file recorded whatever
+GHC happened to be on the machine, which is why they disagree with each other.
 
 Smoke-tested:
 
@@ -50,4 +52,14 @@ Smoke-tested:
 
 ## Local environment note
 
-This runtime's GHC expects a linker named `x86_64-conda-linux-gnu-ld`. A local symlink to `/usr/bin/ld` was created under `~/.local/bin` so Cabal could compile dependencies.
+None. The development shell supplies GHC, cabal, haskell-language-server,
+fourmolu, and the libpq and zlib that the dependencies link against, so no
+machine-level setup is required.
+
+Two workarounds recorded by earlier releases are retired by that shell and
+should not be reintroduced:
+
+- a `~/.local/bin/x86_64-conda-linux-gnu-ld` symlink to `/usr/bin/ld`, needed
+  because a conda-built GHC looked for a linker under that name
+- `LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH` in front of `cabal`, needed
+  because that GHC did not agree with the system libraries

@@ -17,3 +17,5 @@ cloudflare/humblr-workers/.wrangler/
 .codex/skills/graphify/
 .codex/hooks.json
 graphify-out/
+.direnv/
+result

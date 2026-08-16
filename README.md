@@ -14,6 +14,22 @@ The main app is a Haskell-built lab dashboard served from the Servant API at `/l
 
 The repository also includes focused examples: URL shorteners, a double-entry ledger, STM workers, event sourcing, streaming analytics, parser/search, a static site generator, an mmlh-style learning CLI, runtime monitoring, WebSocket chat, TUI Kanban, and Cloudflare Workers / Haskell WASM blueprints.
 
+## Toolchain
+
+GHC, cabal, haskell-language-server, and fourmolu are declared in `flake.nix`
+and pinned by `flake.lock`. Nothing is installed globally, and the compiler is
+GHC 9.8.4 — the version `.github/workflows/ci.yml` installs, so a local build
+and a CI build see the same toolchain.
+
+```bash
+nix develop
+```
+
+With direnv, `direnv allow` once is enough and the shell loads on `cd`. For a
+single command outside the shell, prefix it: `nix develop -c cabal build all`.
+
+Every command below assumes that shell.
+
 ## Quick Start
 
 ```bash

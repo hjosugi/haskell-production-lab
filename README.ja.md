@@ -14,6 +14,18 @@ Haskell Production Labは、実際のアプリケーションを構築しなが�
 
 リポジトリには、焦点を絞った例も含まれています：URLショートナー、ダブルエントリー台帳、STMワーカー、イベントソーシング、ストリーミング分析、パーサ/検索、静的サイトジェネレータ、mmlhスタイルの学習CLI、ランタイム監視、WebSocketチャット、TUIカンバン、そしてCloudflare Workers / Haskell WASMのブループリント。
 
+## ツールチェイン
+
+GHC、cabal、haskell-language-server、fourmoluは`flake.nix`で宣言し、`flake.lock`で固定しています。グローバルには何もインストールしません。コンパイラは`.github/workflows/ci.yml`が入れるものと同じGHC 9.8.4なので、手元のビルドとCIのビルドが同じツールチェインを見ます。
+
+```bash
+nix develop
+```
+
+direnvを使う場合は一度`direnv allow`すれば`cd`で読み込まれます。シェルに入らず単発で実行するなら`nix develop -c cabal build all`のように前置きします。
+
+以下のコマンドはすべてこのシェル内を前提とします。
+
 ## クイックスタート
 
 ```bash
