@@ -47,15 +47,52 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y libpq-dev pkg-config
 
       - name: Install Haskell toolchain
+        id: setup
         uses: haskell-actions/setup@v2
         with:
           ghc-version: "9.8.4"
           cabal-version: "3.12.1.0"
 
-      - name: Build
+      # The cache key is the resolved build plan, not the .cabal file: the
+      # solver picks exact dependency versions from Hackage, so two runs of an
+      # unchanged .cabal can still need different builds. `--dry-run` writes
+      # plan.json without compiling anything, which is what makes the key
+      # available before the expensive step.
+      - name: Resolve the build plan
         run: |
           cabal update
-          cabal build all
+          cabal build all --dry-run
+
+      # Only the cabal store is cached -- the compiled dependencies. Caching
+      # dist-newstyle as well would store this project's own objects, which
+      # every source change invalidates anyway.
+      - name: Restore cached dependencies
+        uses: actions/cache/restore@v4
+        id: cache
+        env:
+          key: ${{ runner.os }}-ghc-${{ steps.setup.outputs.ghc-version }}-cabal-${{ steps.setup.outputs.cabal-version }}
+        with:
+          path: ${{ steps.setup.outputs.cabal-store }}
+          key: ${{ env.key }}-plan-${{ hashFiles('dist-newstyle/cache/plan.json') }}
+          restore-keys: ${{ env.key }}-
+
+      - name: Build dependencies
+        run: cabal build all --only-dependencies
+
+      # Saved before the project itself is built, so a run that fails on this
+      # repository's own code still leaves the dependency cache behind. The
+      # condition skips the save on an exact key hit, which would otherwise
+      # fail: a cache key cannot be overwritten.
+      - name: Save cached dependencies
+        uses: actions/cache/save@v4
+        if: steps.cache.outputs.cache-hit != 'true'
+        with:
+          path: ${{ steps.setup.outputs.cabal-store }}
+          key: ${{ steps.cache.outputs.cache-primary-key }}
+
+      - name: Build
+        run: cabal build all
+
       - name: Test
         env:
           HPS_TEST_DATABASE_URL: postgresql://hps:hps@localhost:5432/hps
