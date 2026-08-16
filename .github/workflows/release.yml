@@ -38,7 +38,12 @@ jobs:
           # ship another version's notes either.
           notes="docs/RELEASE_NOTES_${GITHUB_REF_NAME}.md"
           if [ -f "$notes" ]; then
-            set -- --notes-file "$notes"
+            # The docs carry a language switcher whose links are relative to
+            # docs/. Pasted into a release body they resolve under /releases/
+            # and 404, so the switcher is stripped from the body rather than
+            # from the file the docs site needs it in.
+            sed '/i18n: language-switcher/,+1d' "$notes" >release-notes.md
+            set -- --notes-file release-notes.md
           else
             echo "::warning::${notes} is missing; falling back to generated notes"
             set -- --generate-notes
